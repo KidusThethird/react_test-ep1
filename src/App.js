@@ -4,18 +4,18 @@ import { useState } from 'react';
 
 
 function App() {
+  const[inputValue, setInputValue]= useState('black');
 
 
-var [age, setAge] = useState(0);
 
-const increase = () =>{
-  setAge(age+1);
-  console.log(age);
-}
-  return <div className='App'>
-<h1>{age}</h1>
-<button onClick={increase }>Increase Age</button>
+return(
+
+  <div className='App'>
+<button onClick={()=>{ inputValue=='red'? setInputValue('black') : setInputValue('red') }}>Change</button>
+
+{ <h1 style={{color: inputValue}}>My Name is Kidus</h1> }
   </div>
+)
 
 }
 
@@ -23,4 +23,3 @@ const increase = () =>{
 
 
 export default App;
-  
